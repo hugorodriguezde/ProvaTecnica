@@ -1,0 +1,17 @@
+.navigation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-around;
+  padding-top: 5px;
+
+  background-color: white;
+}
+
+p{
+  font-size: small;
+}
+

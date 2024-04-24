@@ -1,0 +1,56 @@
+
+header{
+  position:fixed;
+  width:100%;
+}
+
+.bgOrange {
+  background-color: #ce8962;
+}
+
+p{
+  font-size: small;
+
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.heart {
+  width: 2rem;
+  height: 2rem;
+  opacity: 0.3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav img {
+  height: 25px;
+}
+
+.bgGrey{
+  background-color: #b6b4b4;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bgGreen{
+  background-color: #b9c287;
+}
+.circle{
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.pi{
+  font-size: 1rem;
+}

@@ -1,27 +1,44 @@
-# ProvaTecnicaHugoRodriguez
+# Prova Tècnica - Aplicació de Fotògrafs
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
 
-## Development server
+## Característiques Implementades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### 1. Obtenció de Dades
 
-## Code scaffolding
+- L'aplicació obté les dades de fotògrafs i consumeix un servei web extern mitjançant una sol·licitud GET.
+- S'utilitza autenticació bàsica per accedir al servei web. Les credencials (usuari i contrasenya) es proporcionen de forma estàtica al codi.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 2. Llistat de Fotògrafs
 
-## Build
+- Un cop obtingudes les dades, es mostren en una llista a la pantalla principal de l'aplicació.
+- Cada element de la llista mostra informació bàsica del fotògraf, com ara el nom i una imatge representativa.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 3. Persistència de Dades
 
-## Running unit tests
+- Les dades obtingudes s'emmagatzemen localment al navegador utilitzant l'emmagatzematge local (localStorage). Això permet que les dades persisteixin fins i tot després de tancar i tornar a obrir laplicació.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 4. Detalls del Fotògraf
 
-## Running end-to-end tests
+- L'aplicació permet visualitzar detalls complets d'un fotògraf seleccionat. En fer clic a un fotògraf de la llista, es mostra una pàgina de detall amb informació addicional.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Característiques Addicionals
 
-## Further help
+#### Lazy Loading per al Detall de Fotògraf
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- He implementat lazy loading per a la càrrega de la pàgina de detall del fotògraf. Això millora el rendiment de l'aplicació en carregar els detalls només quan l'usuari ho demana.
+
+#### Infinite Scroll per a la Llista de Fotògrafs
+
+- S'ha afegit la funcionalitat d'infinite scroll a la llista de fotògrafs. Quan l'usuari arriba al 90% de la llista, es carreguen automàticament més fotògrafs i així es permet una experiència de navegació contínua.
+
+## Instal·lació i Execució
+
+- Navega en el teu terminal fins a l'ubicació del projecte.
+- Executa el comandament `npm install` per a instalar les dependencies del projecte.
+- Executa el comandament `ng serve -o` per a visualitzar el projecte en el teu navegador predeterminat.
+
+## Notes Importants
+
+Assegureu-vos de tenir una connexió a Internet activa perquè l'aplicació pugui obtenir les dades dels fotògrafs del servei web extern.
+
+Aquesta aplicació ha sigut desenvolupada en la versió 17.0.9 d'Angular.

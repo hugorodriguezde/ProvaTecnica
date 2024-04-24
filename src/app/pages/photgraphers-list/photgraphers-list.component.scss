@@ -1,0 +1,31 @@
+
+.fixed{
+  position: fixed;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+h5 {
+  margin-left: 20px;
+}
+
+.scroll{
+  overflow-y: auto;
+  height: 90vh;
+  padding-top: 100px;
+}
+
+li{
+  height:300px;
+}
+
+.customImage img {
+  object-fit: cover;
+  height: 150px;
+}
+
+.heart{
+  margin-right: 20px;
+}

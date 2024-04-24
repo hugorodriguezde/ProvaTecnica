@@ -1,0 +1,45 @@
+<div class="d-flex align-items-center">
+  <img class="back-arrow" (click)="back()" src="../../../assets/img/ic_back_arrow.svg" alt="back_arrow"/>
+</div>
+@if(!isLoading)
+{
+@if(photographer)
+{
+<div class="mt-3">
+  <div class="customImage h-12rem">
+    <img [src]="photographer.image" [alt]="photographer.first_name" />
+  </div>
+  <article class="d-flex justify-content-center mt-2">
+    <div>
+      <section class="grid">
+        <h4 class="container"> {{ photographer.first_name }} {{ photographer.last_name }} </h4>
+        <div class="d-flex align-items-center">
+          @if(!photographer.isFav){
+          <img class="heart" (click)="clickFav(photographer)" src="../../../assets/img/ic_heart.svg" alt="heart" />
+          }
+          @else
+          {
+          <img class="heart" (click)="clickFav(photographer)" src="../../../assets/img/ic_heart_fill.svg" alt="heartfilled" />
+          }
+        </div>
+      </section>
+      <div class="container">
+      <p>{{ photographer.description }}</p>
+      </div>
+    </div>
+  </article>
+</div>
+}
+@else
+{
+<div class="mt-3">
+  <p>Error 404 photographer not found with the provided id</p>
+</div>
+}
+}
+@else
+{
+  <div class="loader-container">
+    <img class="loader" src="../../../assets/img/ic_loader.svg" alt="loading">
+  </div>
+}

@@ -1,0 +1,41 @@
+.back-arrow {
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+
+.customImage img {
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+}
+
+p{
+  font-size: small;
+}
+
+.heart{
+  margin-right: 20px;
+  width: 25px;
+}
+
+.grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loader {
+  width: 100px;
+  height: 100px;
+}

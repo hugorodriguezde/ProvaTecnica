@@ -22,9 +22,9 @@ export class PhotgraphersListComponent implements OnInit{
 constructor(private apiService: ApiService,
   private router: Router) { }
 
-ngOnInit() {
-  this.loadPhotographersFromLocalStorage();
-}
+  ngOnInit() {
+    this.loadPhotographersFromLocalStorage();
+  }
 
 loadPhotographersFromLocalStorage() {
   const storedPhotographers = localStorage.getItem('photographers');
@@ -32,6 +32,14 @@ loadPhotographersFromLocalStorage() {
   if (storedPhotographers && storedNextUrl) {
     this.photographers = JSON.parse(storedPhotographers);
     this.nextUrl = JSON.parse(storedNextUrl);
+
+    //Llegeix l'estat de isFav de cada fotògraf guardat al localStorage
+    this.photographers.forEach(photographer => {
+      const storedPhotographer = JSON.parse(localStorage.getItem(`photographer-${photographer.id}`) as string);
+      if (storedPhotographer) {
+        photographer.isFav = storedPhotographer.isFav;
+      }
+    });
   } else {
     this.loadPhotographers();
   }

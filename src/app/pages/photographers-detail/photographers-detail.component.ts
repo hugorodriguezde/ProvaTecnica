@@ -14,7 +14,7 @@ import { Photographer } from '../../interfaces/photographer.interface';
 export class PhotographersDetailComponent implements OnInit {
 
   photographer!: Photographer;
-isLoading: boolean = true; // Add this line
+  isLoading: boolean = true; 
 
 constructor(private router: Router,
             private route: ActivatedRoute,
@@ -22,17 +22,23 @@ constructor(private router: Router,
 ) { }
 
 ngOnInit() {
-  const id = Number(this.route.snapshot.paramMap.get('id')); // Convert id to a number
+  const id = Number(this.route.snapshot.paramMap.get('id'));
   const storedPhotographer = localStorage.getItem(`photographer-${id}`);
   if (storedPhotographer) {
     this.photographer = JSON.parse(storedPhotographer);
-    this.isLoading = false; 
+    this.isLoading = false;
   } else {
-    this.apiService.getPhotographer(id).subscribe((response: Photographer) => {
-      this.photographer = response;
-      localStorage.setItem(`photographer-${id}`, JSON.stringify(response));
-      this.isLoading = false;
-    });
+    this.apiService.getPhotographer(id).subscribe(
+      (response: Photographer) => {
+        this.photographer = response;
+        localStorage.setItem(`photographer-${id}`, JSON.stringify(response));
+        this.isLoading = false;
+      },
+      (error) => {
+        console.error(error);
+        this.isLoading = false;
+      }
+    );
   }
 }
 

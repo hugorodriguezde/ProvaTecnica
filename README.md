@@ -31,6 +31,10 @@
 
 - S'ha afegit la funcionalitat d'infinite scroll a la llista de fotògrafs. Quan l'usuari arriba al 90% de la llista, es carreguen automàticament més fotògrafs i així es permet una experiència de navegació contínua.
 
+#### Interceptor per a les Peticions HTTP amb Credencials d'Autorització
+
+- He implementat un Interceptor per a les peticions HTTP amb les credencials d'autorització. Això assegura que totes les sol·licituds enviades des de l'aplicació estiguin adequadament autenticades, proporcionant una capa addicional de seguretat i control d'accés a les dades dels usuaris.
+
 ## Instal·lació i Execució
 
 - Navega en el teu terminal fins a l'ubicació del projecte.
